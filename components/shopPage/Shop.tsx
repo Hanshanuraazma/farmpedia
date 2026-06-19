@@ -42,7 +42,7 @@ interface Counts {
 
 const PRODUCTS_PER_PAGE = 12;
 const PRICE_MIN = 0;
-const PRICE_MAX = 1000;
+const PRICE_MAX = 1000000;
 
 const SORT_OPTIONS = [
   { label: "Featured", value: "featured" },
@@ -812,7 +812,7 @@ const Shop = ({ categories, brands }: Props) => {
                 )}
                 {(minPrice !== PRICE_MIN || maxPrice !== PRICE_MAX) && (
                   <FilterChip
-                    label={`$${minPrice} – $${maxPrice}`}
+                    label={`Rp${minPrice.toLocaleString("id-ID")} – Rp${maxPrice.toLocaleString("id-ID")}`}
                     onRemove={() => {
                       setMinPrice(PRICE_MIN);
                       setMaxPrice(PRICE_MAX);
@@ -1062,7 +1062,7 @@ const PriceRangeSlider = ({
           </span>
           <div className="relative">
             <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-xs text-gray-500">
-              $
+              Rp
             </span>
             <input
               type="number"
@@ -1084,7 +1084,7 @@ const PriceRangeSlider = ({
           </span>
           <div className="relative">
             <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-xs text-gray-500">
-              $
+              Rp
             </span>
             <input
               type="number"

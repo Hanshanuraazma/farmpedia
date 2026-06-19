@@ -18,9 +18,9 @@ const ProductCard = memo(({ product }: { product: Product }) => {
     <div className="group relative border border-gray-200 rounded-lg overflow-hidden bg-white hover:shadow-lg transition-all duration-300">
       {/* Image Container - Fixed height h-60 to maintain dimensions */}
       <div className="relative h-60 overflow-hidden bg-linear-to-br from-gray-50 to-gray-100">
-        {product?.images && (
+        {product?.images && product.images.length > 0 && (
           <Link
-            href={`/product/${product?.slug?.current}`}
+            href={`/product/${product?.slug?.current || ""}`}
             className="block h-full"
           >
             <img
