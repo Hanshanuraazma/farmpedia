@@ -10,8 +10,7 @@
 import { NextStudio } from 'next-sanity/studio'
 import config from '../../../sanity.config'
 
-export const dynamic = 'force-static'
-
+// export const dynamic = 'force-static' // removed to prevent 404s on Vercel for sub-paths
 export { metadata, viewport } from 'next-sanity/studio'
 
 export default function StudioPage() {
