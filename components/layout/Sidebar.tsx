@@ -130,7 +130,6 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
     { title: "Categories", href: "/category", icon: Grid3X3 },
     { title: "Brands", href: "/brands", icon: Tag },
     { title: "Blog", href: "/blog", icon: BookOpen },
-    { title: "Hot Deals", href: "/deal", icon: Flame },
   ];
 
   const supportMenuItems: MenuItem[] = [
@@ -249,7 +248,7 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
                   <div className="rounded-xl border border-gray-200 bg-gradient-to-br from-gofarm-light-green/10 to-white p-4">
                     <div className="flex items-center gap-2 text-gray-700 mb-3">
                       <Sparkles size={16} className="text-gofarm-green" />
-                      <p className="text-sm font-semibold">Welcome to GoFarm</p>
+                      <p className="text-sm font-semibold">Welcome to Farmpedia</p>
                     </div>
                     <p className="text-xs text-gray-500 mb-3">
                       Sign in to access your account, orders, and wishlist.
@@ -381,26 +380,7 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
                 </div>
               )}
 
-              {/* Promo */}
-              <div className="px-5 pt-5">
-                <Link
-                  href="/deal"
-                  onClick={onClose}
-                  className="block rounded-xl bg-gradient-to-br from-gofarm-green to-gofarm-light-green p-4 text-white shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <Flame size={16} className="text-amber-300" />
-                    <p className="text-sm font-bold">Special Offer</p>
-                  </div>
-                  <p className="text-xs text-white/90 mb-3">
-                    Get 20% off on your first order today.
-                  </p>
-                  <span className="inline-flex items-center gap-1 text-xs font-bold bg-white text-gofarm-green px-3 py-1.5 rounded-full">
-                    Shop Now
-                    <ChevronRight size={12} />
-                  </span>
-                </Link>
-              </div>
+
 
               {/* Support */}
               <div className="px-5 pt-5">
@@ -448,7 +428,7 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, onClose }) => {
             {/* Footer */}
             <div className="border-t border-gray-200 bg-white px-5 py-3 text-center">
               <p className="text-[11px] text-gray-500">
-                © {new Date().getFullYear()} GoFarm. All rights reserved.
+                © {new Date().getFullYear()} Farmpedia. All rights reserved.
               </p>
             </div>
           </motion.aside>

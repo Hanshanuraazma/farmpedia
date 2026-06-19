@@ -1,19 +1,15 @@
 export const headerData = [
   { title: "Home", href: "/" },
   { title: "Shop", href: "/shop" },
-  { title: "Hot Deal", href: "/deal" },
-  { title: "Collection", href: "/collection" },
-  { title: "Compare", href: "/compare" },
-  { title: "Local Stores", href: "/store-list" },
   { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },
 ];
 
 export const productType = [
-  { title: "Gadget", value: "gadget" },
-  { title: "Appliances", value: "appliances" },
-  { title: "Refrigerators", value: "refrigerators" },
-  { title: "Others", value: "others" },
+  { title: "Sayuran", value: "sayuran" },
+  { title: "Buah-buahan", value: "buah" },
+  { title: "Daging", value: "daging" },
+  { title: "Lainnya", value: "lainnya" },
 ];
 
 export const quickLinksData = [
@@ -47,28 +43,28 @@ export const supportData = [
 ];
 export const faqsData = [
   {
-    question: "What services does gofarm offer?",
+    question: "Apa layanan yang disediakan oleh Farmpedia?",
     answer:
-      "gofarm offers a wide range of technology solutions including custom software development, cloud services, and digital transformation consulting.",
+      "Farmpedia menyediakan platform e-commerce yang berfokus pada penjualan hasil tani dan produk segar langsung dari mitra petani lokal dengan kualitas premium.",
   },
   {
-    question: "How can I get support for gofarm products?",
+    question: "Bagaimana cara menghubungi bantuan Farmpedia?",
     answer:
-      "You can reach our support team through our contact page or by emailing support@gofarm.com.",
+      "Anda dapat menghubungi tim dukungan kami melalui halaman kontak atau mengirimkan email ke nunu05867@gmail.com.",
   },
   {
-    question: "Does gofarm offer training for its products?",
+    question: "Apakah Farmpedia menjamin kesegaran produk?",
     answer:
-      "Yes, we offer comprehensive training programs for all our products and services. Please contact our sales team for more information.",
+      "Ya, kami bekerja sama dengan mitra terpercaya dan sistem logistik yang cepat untuk memastikan produk sampai ke tangan Anda dalam keadaan segar.",
   },
   {
-    question: "What industries does gofarm serve?",
+    question: "Di wilayah mana saja Farmpedia beroperasi?",
     answer:
-      "gofarm serves a wide range of industries including finance, healthcare, retail, and manufacturing.",
+      "Saat ini layanan distribusi Farmpedia difokuskan untuk wilayah Singapura.",
   },
   {
-    question: "How does gofarm ensure data security?",
+    question: "Bagaimana keamanan pembayaran di Farmpedia?",
     answer:
-      "We employ industry-standard security measures and comply with all relevant data protection regulations to ensure the security of our clients' data.",
+      "Kami menggunakan Stripe sebagai payment gateway utama, yang menerapkan standar keamanan industri tinggi untuk melindungi data transaksi Anda.",
   },
 ];
