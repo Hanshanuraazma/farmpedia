@@ -105,14 +105,20 @@ export async function POST(
       couponDiscount + businessDiscount + order.productDiscount;
     const payableAmount = totalAmount - totalDiscount;
 
+    const currency = (order.currency || "usd").toLowerCase();
+    const zeroDecimalCurrencies = ["bif", "clp", "djf", "gnf", "jpy", "kmf", "krw", "mga", "pyg", "rwf", "ugx", "vnd", "vuv", "xaf", "xof", "xpf", "idr"];
+    const unitAmount = zeroDecimalCurrencies.includes(currency)
+      ? Math.round(payableAmount)
+      : Math.round(payableAmount * 100);
+
     // Create a single line item with the final payable amount
     // instead of creating items from products (which doesn't account for discounts)
     const lineItems = [
       {
         quantity: 1,
         price_data: {
-          currency: order.currency?.toLowerCase() || "usd",
-          unit_amount: Math.round(payableAmount * 100), // Convert to cents
+          currency: currency,
+          unit_amount: unitAmount, // Use correct amount calculation
           product_data: {
             name: `Order #${order.orderNumber}`,
             description: `Complete order with ${order.products.length} item(s) including all discounts`,
