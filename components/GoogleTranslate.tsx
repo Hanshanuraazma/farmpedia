@@ -33,7 +33,7 @@ export default function GoogleTranslate() {
   if (!isClient) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 z-[9999] bg-white p-2 rounded-lg shadow-2xl border border-gray-200 overflow-hidden translate-element-container">
+    <div className="translate-element-container inline-block">
       <div id="google_translate_element"></div>
       <style dangerouslySetInnerHTML={{ __html: `
         /* Remove the top google translate bar */

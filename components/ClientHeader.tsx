@@ -16,6 +16,7 @@ import UserDropdown from "./UserDropdown";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Store } from "lucide-react";
 import TopHeaderBadge from "./TopHeaderBadge";
+import GoogleTranslate from "./GoogleTranslate";
 
 const ClientHeader = () => {
   const { user, loading } = useAuthStore();
@@ -256,8 +257,9 @@ const ClientHeader = () => {
               <HeaderMenu />
             </div>
 
-            {/* Right: Help Link */}
-            <div className="flex items-center gap-2">
+            {/* Right: Help Link & Translate */}
+            <div className="flex items-center gap-3">
+              <GoogleTranslate />
               <Link
                 href="/help"
                 className="text-sm font-medium text-gofarm-gray hover:text-gofarm-light-green hoverEffect whitespace-nowrap"
