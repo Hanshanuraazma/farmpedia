@@ -108,7 +108,14 @@ const AdminDashboardOverview = () => {
     },
   ];
 
-  const quickActions = [
+  const quickActions: Array<{
+    title: string;
+    description: string;
+    icon: React.ElementType;
+    href: string;
+    color: string;
+    badge?: number;
+  }> = [
     {
       title: "View Analytics",
       description: "Detailed business insights",
