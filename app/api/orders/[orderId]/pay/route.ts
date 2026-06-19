@@ -140,14 +140,14 @@ export async function POST(
       }/orders?payment=cancelled`,
       metadata: {
         orderId: order._id,
-        email: order.email,
+        email: order.email || "no-email@farmpedia.com",
         orderDate: new Date().toISOString(),
-        itemCount: order.products.length.toString(),
-        shippingAddress: JSON.stringify(order.address),
+        itemCount: order.products?.length?.toString() || "0",
+        shippingAddress: JSON.stringify(order.address || {}),
         orderAmount: payableAmount.toString(),
         totalDiscount: totalDiscount.toString(),
       },
-      customer_email: order.email,
+      customer_email: order.email || undefined,
     });
 
     return NextResponse.json({
@@ -156,12 +156,12 @@ export async function POST(
       url: session.url,
       message: "Payment session created successfully",
     });
-  } catch (error: unknown) {
+  } catch (error: any) {
     const errorMessage =
       error instanceof Error ? error.message : "Unknown error";
-    console.error("Payment session creation error:", errorMessage);
+    console.error("Payment session creation error:", errorMessage, error);
     return NextResponse.json(
-      { error: "Failed to create payment session" },
+      { error: "Failed to create payment session: " + errorMessage },
       { status: 500 },
     );
   }
