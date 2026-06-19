@@ -134,16 +134,14 @@ export async function POST(
     ];
 
     // Create Stripe checkout session
+    const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_BASE_URL || "https://farmpediagopedia.vercel.app";
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: `${
-        process.env.NEXT_PUBLIC_BASE_URL || process.env.NEXTAUTH_URL
-      }/success?session_id={CHECKOUT_SESSION_ID}&order_id=${order._id}`,
-      cancel_url: `${
-        process.env.NEXT_PUBLIC_BASE_URL || process.env.NEXTAUTH_URL
-      }/orders?payment=cancelled`,
+      success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}&orderId=${order._id}`,
+      cancel_url: `${origin}/orders`,
       metadata: {
         orderId: order._id,
         email: order.email || "no-email@farmpedia.com",

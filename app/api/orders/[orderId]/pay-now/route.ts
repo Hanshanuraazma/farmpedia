@@ -185,13 +185,15 @@ export async function POST(
         });
       }
 
+      const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_BASE_URL || "https://farmpediagopedia.vercel.app";
+
       const checkoutSession = await stripe.checkout.sessions.create({
         customer: stripeCustomerId,
         payment_method_types: ["card"],
         line_items: lineItems,
         mode: "payment",
-        success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}&orderId=${order._id}`,
-        cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/orders`,
+        success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}&orderId=${order._id}`,
+        cancel_url: `${origin}/orders`,
         metadata: {
           orderId: order._id,
           orderNumber: order.orderNumber || "",

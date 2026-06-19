@@ -48,13 +48,15 @@ export const POST = async (request: NextRequest) => {
       },
     ];
 
+    const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_BASE_URL || "https://farmpediagopedia.vercel.app";
+
     // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}&order_id=${orderId}&orderNumber=${orderNumber}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/user/orders/${orderId}?cancelled=true`,
+      success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}&order_id=${orderId}&orderNumber=${orderNumber}`,
+      cancel_url: `${origin}/user/orders/${orderId}?cancelled=true`,
       metadata: {
         orderId: orderId.toString(),
         orderNumber: orderNumber.toString(),
