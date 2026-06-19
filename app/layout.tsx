@@ -8,6 +8,7 @@ import AnalyticsProvider from "@/components/AnalyticsProvider";
 import ShareSidebar from "@/components/ShareSidebar";
 import PurchaseFloatingButton from "@/components/PurchaseFloatingButton";
 import CartAddedModal from "@/components/CartAddedModal";
+import GoogleTranslate from "@/components/GoogleTranslate";
 import "./globals.css";
 
 const jost = Jost({
@@ -100,6 +101,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
         {children}
         <PurchaseFloatingButton />
         <CartAddedModal />
+        <GoogleTranslate />
         <Toaster
           position="bottom-right"
           richColors
