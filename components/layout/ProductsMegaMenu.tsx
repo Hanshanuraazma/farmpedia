@@ -135,7 +135,7 @@ const ProductsMegaMenu = () => {
 
                     <div className="mt-6 flex flex-col sm:flex-row gap-3">
                       <Link
-                        href={PURCHASE_URL}
+                        href={purchaseUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setOpen(false)}
