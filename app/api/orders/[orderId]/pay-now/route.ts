@@ -131,6 +131,9 @@ export async function POST(
     const currency = (order.currency || "USD").toLowerCase();
 
     try {
+      const zeroDecimalCurrencies = ["bif", "clp", "djf", "gnf", "jpy", "kmf", "krw", "mga", "pyg", "rwf", "ugx", "vnd", "vuv", "xaf", "xof", "xpf", "idr"];
+      const isZeroDecimal = zeroDecimalCurrencies.includes(currency);
+
       // Prepare line items for the checkout session
       const lineItems = order.products.map(
         (item: {
@@ -146,7 +149,9 @@ export async function POST(
                   ? [urlFor(item.product.images[0]).url()]
                   : [],
             },
-            unit_amount: Math.round((item.product.price || 0) * 100),
+            unit_amount: isZeroDecimal 
+              ? Math.round(item.product.price || 0)
+              : Math.round((item.product.price || 0) * 100),
           },
           quantity: item.quantity,
         })
@@ -160,7 +165,7 @@ export async function POST(
             product_data: {
               name: "Tax",
             },
-            unit_amount: Math.round(order.tax * 100),
+            unit_amount: isZeroDecimal ? Math.round(order.tax) : Math.round(order.tax * 100),
           },
           quantity: 1,
         });
@@ -174,7 +179,7 @@ export async function POST(
             product_data: {
               name: "Shipping",
             },
-            unit_amount: Math.round(order.shipping * 100),
+            unit_amount: isZeroDecimal ? Math.round(order.shipping) : Math.round(order.shipping * 100),
           },
           quantity: 1,
         });
