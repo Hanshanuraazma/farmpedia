@@ -32,10 +32,10 @@ const Logo = ({ className, variant = "default" }: Props) => {
           <div className="flex items-center">
             <h1 className="text-sm font-black tracking-wider uppercase font-sans">
               <span className="text-gofarm-green group-hover:text-gofarm-light-green hoverEffect">
-                Shop
+                GoFarm
               </span>
               <span className="bg-linear-to-r from-gofarm-light-green to-gofarm-orange bg-clip-text text-transparent group-hover:from-gofarm-green group-hover:to-gofarm-light-green hoverEffect">
-                cart
+                pedia
               </span>
             </h1>
 
@@ -53,13 +53,24 @@ const Logo = ({ className, variant = "default" }: Props) => {
   // Default full logo
   return (
     <Link href={"/"}>
-      <Image
-        src={"/logo.svg"}
-        alt="logo"
-        width={150}
-        height={150}
-        className={cn("w-auto h-6 sm:h-7 md:h-8", className)}
-      />
+      <div
+        className={cn(
+          "flex items-center gap-2 group hoverEffect",
+          className,
+        )}
+      >
+        <div className="relative flex items-center justify-center bg-gofarm-green rounded-xl p-1.5 shadow-md group-hover:bg-gofarm-light-green transition-colors">
+          <ShoppingCart className="w-5 h-5 text-white" strokeWidth={2.5} />
+        </div>
+        <h1 className="text-xl sm:text-2xl font-black tracking-tight font-sans">
+          <span className="text-gofarm-green group-hover:text-gofarm-light-green transition-colors">
+            GoFarm
+          </span>
+          <span className="text-gofarm-orange group-hover:text-gofarm-light-orange transition-colors">
+            pedia
+          </span>
+        </h1>
+      </div>
     </Link>
   );
 };

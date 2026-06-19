@@ -11,7 +11,7 @@ export function generateProductMetadata(product: any): Metadata {
   const title = product.name || "Product";
   const description =
     product.description ||
-    `Buy ${title} online at gofarm. ${
+    `Buy ${title} online at GoFarmpedia. ${
       product.price ? `Price: $${product.price}` : ""
     }`;
   const imageUrl = product.images?.[0]
@@ -46,7 +46,7 @@ export function generateProductMetadata(product: any): Metadata {
           alt: title,
         },
       ],
-      siteName: "gofarm",
+      siteName: "GoFarmpedia",
     },
     twitter: {
       card: "summary_large_image",
@@ -70,7 +70,7 @@ export function generateCategoryMetadata(
   const title = category.title || "Category";
   const description =
     category.description ||
-    `Browse ${productCount} products in ${title} category at gofarm. Find the best deals and quality items.`;
+    `Browse ${productCount} products in ${title} category at GoFarmpedia. Find the best fresh agricultural products.`;
   const imageUrl = category.image
     ? urlFor(category.image).url()
     : "/og-image.jpg";
@@ -100,7 +100,7 @@ export function generateCategoryMetadata(
           alt: title,
         },
       ],
-      siteName: "gofarm",
+      siteName: "GoFarmpedia",
     },
     twitter: {
       card: "summary_large_image",
@@ -122,7 +122,7 @@ export function generateProductSchema(product: any) {
 
   // Extract brand name if it's populated
   const brandName =
-    typeof product.brand === "object" ? product.brand?.name : "gofarm";
+    typeof product.brand === "object" ? product.brand?.name : "GoFarmpedia";
 
   return {
     "@context": "https://schema.org",
@@ -188,7 +188,7 @@ export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "gofarm",
+    name: "GoFarmpedia",
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
     description:
@@ -216,7 +216,7 @@ export function generateWebsiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "gofarm",
+    name: "GoFarmpedia",
     url: BASE_URL,
     potentialAction: {
       "@type": "SearchAction",
@@ -304,9 +304,9 @@ export function getCanonicalUrl(path: string): string {
  */
 export function generateHomeMetadata(): Metadata {
   return {
-    title: "gofarm - Your Trusted Online Shopping Destination",
+    title: "GoFarmpedia - Your Trusted Agricultural E-Commerce",
     description:
-      "Discover amazing products at gofarm, your trusted online shopping destination for quality items and exceptional customer service. Shop electronics, fashion, home goods and more with fast delivery.",
+      "Discover fresh agricultural products at GoFarmpedia. Shop fruits, vegetables, and livestock products like eggs, milk, and meat.",
     keywords: [
       "online shopping",
       "e-commerce",
@@ -320,23 +320,23 @@ export function generateHomeMetadata(): Metadata {
     openGraph: {
       type: "website",
       url: BASE_URL,
-      title: "gofarm - Your Trusted Online Shopping Destination",
+      title: "GoFarmpedia - Fresh Agricultural Products",
       description:
-        "Discover amazing products at gofarm. Shop electronics, fashion, home goods and more with fast delivery.",
+        "Discover amazing fresh farm products at GoFarmpedia.",
       images: [
         {
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "gofarm Online Store",
+          alt: "GoFarmpedia Online Store",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "gofarm - Your Trusted Online Shopping Destination",
+      title: "GoFarmpedia - Fresh Agricultural Products",
       description:
-        "Discover amazing products at gofarm. Shop electronics, fashion, home goods and more.",
+        "Shop fruits, vegetables, and livestock directly from farmers.",
       images: ["/og-image.jpg"],
     },
     alternates: {

@@ -19,11 +19,11 @@ const jost = Jost({
 export const metadata: Metadata = {
   metadataBase: new URL("https://farmpedia.vercel.app"),
   title: {
-    template: "%s | gofarm - Premium Online Shopping",
-    default: "gofarm - Your Trusted Online Shopping Destination",
+    template: "%s | GoFarmpedia - Agricultural E-Commerce",
+    default: "GoFarmpedia - Fresh Fruits, Vegetables & Livestock",
   },
   description:
-    "Discover amazing products at gofarm, your trusted online shopping destination for quality items and exceptional customer service. Shop electronics, fashion, home goods and more with fast delivery.",
+    "Discover fresh agricultural products at GoFarmpedia. Shop high-quality fruits, vegetables, and livestock products like eggs, milk, fish, chicken, beef, and goat meat directly from farmers.",
   keywords: [
     "online shopping",
     "e-commerce",
@@ -34,11 +34,17 @@ export const metadata: Metadata = {
     "home goods",
     "deals",
     "discounts",
-    "gofarm",
+    "gofarmpedia",
+    "agricultural ecommerce",
+    "fresh fruits",
+    "vegetables",
+    "livestock",
+    "farm products",
+    "buy online",
   ],
-  authors: [{ name: "gofarm" }],
-  creator: "gofarm",
-  publisher: "gofarm",
+  authors: [{ name: "GoFarmpedia" }],
+  creator: "GoFarmpedia",
+  publisher: "GoFarmpedia",
   formatDetection: {
     email: false,
     address: false,
@@ -48,26 +54,26 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://farmpedia.vercel.app",
-    siteName: "gofarm",
-    title: "gofarm - Your Trusted Online Shopping Destination",
+    siteName: "GoFarmpedia",
+    title: "GoFarmpedia - Fresh Agricultural Products",
     description:
-      "Discover amazing products at gofarm, your trusted online shopping destination for quality items and exceptional customer service.",
+      "Shop high-quality fruits, vegetables, and livestock products like eggs, milk, and meat directly from farmers.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "gofarm Online Store",
+        alt: "GoFarmpedia Store",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "gofarm - Your Trusted Online Shopping Destination",
+    title: "GoFarmpedia - Fresh Agricultural Products",
     description:
-      "Discover amazing products at gofarm, your trusted online shopping destination for quality items and exceptional customer service.",
+      "Shop high-quality fruits, vegetables, and livestock products directly from farmers.",
     images: ["/og-image.jpg"],
-    creator: "@gofarm",
+    creator: "@gofarmpedia",
   },
   robots: {
     index: true,
