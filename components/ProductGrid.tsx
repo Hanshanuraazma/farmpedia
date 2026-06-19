@@ -107,7 +107,10 @@ const ProductGrid = () => {
   // Fetch products for each variant (for carousels)
   useEffect(() => {
     const fetchProductsByVariant = async () => {
-      if (productVariants.length === 0) return;
+      if (productVariants.length === 0) {
+        setCarouselsLoading(false);
+        return;
+      }
 
       setCarouselsLoading(true);
       try {
