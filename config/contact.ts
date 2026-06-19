@@ -2,16 +2,12 @@
 
 export const contactConfig = {
   company: {
-    name: process.env.NEXT_PUBLIC_COMPANY_NAME || "Farmpedia",
-    email: process.env.NEXT_PUBLIC_COMPANY_EMAIL || "nunu05867@gmail.com",
-    phone: process.env.NEXT_PUBLIC_COMPANY_PHONE || "0855882508760",
-    address:
-      process.env.NEXT_PUBLIC_COMPANY_ADDRESS ||
-      "10 Orchard Road, Farmpedia Tower",
-    city: process.env.NEXT_PUBLIC_COMPANY_CITY || "Singapore 238888",
-    description:
-      process.env.NEXT_PUBLIC_COMPANY_DESCRIPTION ||
-      "Platform E-Commerce terpercaya yang menyediakan hasil tani dan produk segar berkualitas premium dari mitra terbaik.",
+    name: "Farmpedia",
+    email: "nunu05867@gmail.com",
+    phone: "0855882508760",
+    address: "10 Orchard Road, Farmpedia Tower",
+    city: "Singapore 238888",
+    description: "Platform E-Commerce terpercaya yang menyediakan hasil tani dan produk segar berkualitas premium dari mitra terbaik.",
   },
   businessHours: {
     weekday:
@@ -22,8 +18,8 @@ export const contactConfig = {
       "Saturday - Sunday: 10AM - 4PM EST",
   },
   emails: {
-    support: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "nunu05867@gmail.com",
-    sales: process.env.NEXT_PUBLIC_SALES_EMAIL || "nunu05867@gmail.com",
+    support: "nunu05867@gmail.com",
+    sales: "nunu05867@gmail.com",
   },
   responseTime: {
     standard:
@@ -40,11 +36,9 @@ export const contactConfig = {
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "#",
   },
   legal: {
-    copyright:
-      process.env.NEXT_PUBLIC_COPYRIGHT_TEXT ||
-      "© 2026 Farmpedia. All rights reserved.",
-    privacyPolicy: process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL || "/privacy",
-    terms: process.env.NEXT_PUBLIC_TERMS_URL || "/terms",
+    copyright: "© 2026 Farmpedia. All rights reserved.",
+    privacyPolicy: "/privacy",
+    terms: "/terms",
   },
   support: {
     helpCenter: "/help",
