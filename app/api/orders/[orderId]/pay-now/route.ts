@@ -95,8 +95,9 @@ export async function POST(
     ) {
       try {
         // First, try to find existing customer by email
+        const customerEmail = order.email || "no-email@farmpedia.com";
         const existingCustomers = await stripe.customers.list({
-          email: order.email,
+          email: customerEmail,
           limit: 1,
         });
 
@@ -105,11 +106,11 @@ export async function POST(
         } else {
           // Create new customer
           const customer = await stripe.customers.create({
-            email: order.email,
-            name: order.customerName,
+            email: customerEmail,
+            name: order.customerName || "Farmpedia Customer",
             metadata: {
-              firebaseUid: order.firebaseUid,
-              orderId: order._id,
+              firebaseUid: order.firebaseUid || "",
+              orderId: order._id || "",
             },
           });
           stripeCustomerId = customer.id;
@@ -117,11 +118,11 @@ export async function POST(
 
         // Update order with correct Stripe customer ID
         await writeClient.patch(order._id).set({ stripeCustomerId }).commit();
-      } catch (customerError) {
+      } catch (customerError: any) {
         console.error(`Failed to create/find Stripe customer:`, customerError);
         return NextResponse.json(
-          { error: "Failed to create or find Stripe customer" },
-          { status: 500 }
+          { error: "Failed to create or find Stripe customer: " + (customerError?.message || "Unknown error") },
+          { status: 500 },
         );
       }
     }
