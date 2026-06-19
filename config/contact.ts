@@ -2,16 +2,16 @@
 
 export const contactConfig = {
   company: {
-    name: process.env.NEXT_PUBLIC_COMPANY_NAME || "gofarm",
-    email: process.env.NEXT_PUBLIC_COMPANY_EMAIL || "support@gofarm.com",
-    phone: process.env.NEXT_PUBLIC_COMPANY_PHONE || "+1 (555) 123-4567",
+    name: process.env.NEXT_PUBLIC_COMPANY_NAME || "Farmpedia",
+    email: process.env.NEXT_PUBLIC_COMPANY_EMAIL || "nunu05867@gmail.com",
+    phone: process.env.NEXT_PUBLIC_COMPANY_PHONE || "0855882508760",
     address:
       process.env.NEXT_PUBLIC_COMPANY_ADDRESS ||
-      "123 Shopping Street, Commerce District",
-    city: process.env.NEXT_PUBLIC_COMPANY_CITY || "New York, NY 10001, USA",
+      "10 Orchard Road, Farmpedia Tower",
+    city: process.env.NEXT_PUBLIC_COMPANY_CITY || "Singapore 238888",
     description:
       process.env.NEXT_PUBLIC_COMPANY_DESCRIPTION ||
-      "Discover amazing products at gofarm, your trusted online shopping destination for quality items and exceptional customer service.",
+      "Platform E-Commerce terpercaya yang menyediakan hasil tani dan produk segar berkualitas premium dari mitra terbaik.",
   },
   businessHours: {
     weekday:
@@ -22,8 +22,8 @@ export const contactConfig = {
       "Saturday - Sunday: 10AM - 4PM EST",
   },
   emails: {
-    support: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support@gofarm.com",
-    sales: process.env.NEXT_PUBLIC_SALES_EMAIL || "sales@gofarm.com",
+    support: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "nunu05867@gmail.com",
+    sales: process.env.NEXT_PUBLIC_SALES_EMAIL || "nunu05867@gmail.com",
   },
   responseTime: {
     standard:
@@ -42,7 +42,7 @@ export const contactConfig = {
   legal: {
     copyright:
       process.env.NEXT_PUBLIC_COPYRIGHT_TEXT ||
-      "© 2024 gofarm. All rights reserved.",
+      "© 2026 Farmpedia. All rights reserved.",
     privacyPolicy: process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL || "/privacy",
     terms: process.env.NEXT_PUBLIC_TERMS_URL || "/terms",
   },

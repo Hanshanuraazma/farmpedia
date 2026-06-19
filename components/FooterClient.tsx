@@ -113,9 +113,9 @@ const FooterClient = () => {
           <p>
             © {new Date().getFullYear()}{" "}
             <span className="text-gofarm-black font-black tracking-wider uppercase hover:text-gofarm-green hoverEffect group font-sans">
-              Gofar
+              Farmpedi
               <span className="text-gofarm-green group-hover:text-gofarm-black hoverEffect">
-                m
+                a
               </span>
             </span>
             . All rights reserved.
