@@ -297,10 +297,10 @@ export async function DELETE(request: NextRequest) {
       success: true,
       message: "Address deleted successfully",
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error deleting address:", error);
     return NextResponse.json(
-      { error: "Failed to delete address" },
+      { error: "Failed to delete address: " + (error.message || "Unknown error") },
       { status: 500 },
     );
   }

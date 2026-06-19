@@ -171,12 +171,11 @@ export default function AddressEditSidebar({
     setDeleteLoading(true);
 
     try {
-      const response = await fetch(`/api/user/addresses`, {
+      const response = await fetch(`/api/user/addresses?id=${address._id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ addressId: address._id }),
       });
 
       if (response.ok) {

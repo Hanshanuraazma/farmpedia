@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/firebase-admin-auth";
-import { client } from "@/sanity/lib/client";
+import { backendClient } from "@/sanity/lib/backendClient";
 
 export async function GET() {
   try {
@@ -33,7 +33,7 @@ export async function GET() {
       createdAt
     }`;
 
-    const addresses = await client.fetch(query, { email: userEmail });
+    const addresses = await backendClient.fetch(query, { email: userEmail });
 
     return NextResponse.json({
       addresses,
@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
 
     // If this is being set as default, unset all other default addresses
     if (isDefault) {
-      await client
+      await backendClient
         .patch({
           query: `*[_type == "address" && email == "${userEmail}" && default == true]`,
         })
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create new address
-    const newAddress = await client.create({
+    const newAddress = await backendClient.create({
       _type: "address",
       name,
       email: userEmail,
@@ -168,7 +168,7 @@ export async function PUT(request: NextRequest) {
     }
 
     // Verify the address belongs to the current user
-    const existingAddress = await client.fetch(
+    const existingAddress = await backendClient.fetch(
       `*[_type == "address" && _id == $id && email == $email][0]`,
       { id: _id, email: userEmail }
     );
@@ -182,7 +182,7 @@ export async function PUT(request: NextRequest) {
 
     // If this is being set as default, unset all other default addresses
     if (isDefault) {
-      await client
+      await backendClient
         .patch({
           query: `*[_type == "address" && email == "${userEmail}" && default == true && _id != "${_id}"]`,
         })
@@ -191,7 +191,7 @@ export async function PUT(request: NextRequest) {
     }
 
     // Update the address
-    const updatedAddress = await client
+    const updatedAddress = await backendClient
       .patch(_id)
       .set({
         name,
@@ -245,7 +245,7 @@ export async function DELETE(request: NextRequest) {
     }
 
     // Verify the address belongs to the current user
-    const existingAddress = await client.fetch(
+    const existingAddress = await backendClient.fetch(
       `*[_type == "address" && _id == $id && email == $email][0]`,
       { id: addressId, email: userEmail }
     );
@@ -258,17 +258,17 @@ export async function DELETE(request: NextRequest) {
     }
 
     // Delete the address
-    await client.delete(addressId);
+    await backendClient.delete(addressId);
 
     // If this was the default address, set another address as default
     if (existingAddress.default) {
-      const remainingAddresses = await client.fetch(
+      const remainingAddresses = await backendClient.fetch(
         `*[_type == "address" && email == $email] | order(createdAt desc)[0]`,
         { email: userEmail }
       );
 
       if (remainingAddresses) {
-        await client
+        await backendClient
           .patch(remainingAddresses._id)
           .set({ default: true })
           .commit();
