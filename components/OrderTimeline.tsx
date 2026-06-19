@@ -180,8 +180,7 @@ const OrderTimeline: React.FC<OrderTimelineProps> = ({ order }) => {
       order.dispatchedAt || order.assignedDeliverymanName
     );
     const isPaid = order.paymentStatus === "paid";
-    const isCOD =
-      order.paymentMethod === "cod" || order.paymentStatus === "pending";
+    const isCOD = order.paymentMethod === "cod";
     const isCashCollected = !!order.cashCollectedAt;
     const isDelivered = !!order.deliveredAt;
 
