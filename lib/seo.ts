@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { Product, Category } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/image";
 
-const BASE_URL = "https://gofarm.reactbd.com";
+const BASE_URL = "https://farmpedia.vercel.app";
 
 /**
  * Generate metadata for product pages

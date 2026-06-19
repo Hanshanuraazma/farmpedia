@@ -6,7 +6,6 @@ import { Toaster } from "sonner";
 import AuthInitializer from "@/components/AuthInitializer";
 import AnalyticsProvider from "@/components/AnalyticsProvider";
 import ShareSidebar from "@/components/ShareSidebar";
-import PurchaseFloatingButton from "@/components/PurchaseFloatingButton";
 import CartAddedModal from "@/components/CartAddedModal";
 import "./globals.css";
 
@@ -18,7 +17,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gofarm.reactbd.com"),
+  metadataBase: new URL("https://farmpedia.vercel.app"),
   title: {
     template: "%s | gofarm - Premium Online Shopping",
     default: "gofarm - Your Trusted Online Shopping Destination",
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://gofarm.reactbd.com",
+    url: "https://farmpedia.vercel.app",
     siteName: "gofarm",
     title: "gofarm - Your Trusted Online Shopping Destination",
     description:
@@ -86,7 +85,7 @@ export const metadata: Metadata = {
     // Add other verification codes as needed
   },
   alternates: {
-    canonical: "https://gofarm.reactbd.com",
+    canonical: "https://farmpedia.vercel.app",
   },
 };
 
@@ -98,7 +97,6 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
         <AnalyticsProvider />
         <ShareSidebar />
         {children}
-        <PurchaseFloatingButton />
         <CartAddedModal />
         <Toaster
           position="bottom-right"

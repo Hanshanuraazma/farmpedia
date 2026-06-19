@@ -13,7 +13,7 @@ import Container from "./Container";
  * Falls back to the public marketing page if unset.
  */
 const PURCHASE_URL =
-  process.env.NEXT_PUBLIC_PURCHASE_CODE_URL || "https://reactbd.com";
+  process.env.NEXT_PUBLIC_PURCHASE_CODE_URL || "https://farmpedia.vercel.app";
 
 export interface PremiumFeatureProps {
   /** Short label that names the locked feature (e.g. "Hot Deals"). */

@@ -121,11 +121,12 @@ export default function AdminUserManagement() {
           <CardContent>
             <div className="space-y-2">
               <Button
-                onClick={() => setEmail("dev.reactbd@gmail.com")}
                 variant="outline"
                 size="sm"
+                onClick={() => setEmail("admin@farmpedia.com")}
+                className="text-xs w-full sm:w-auto mt-2 sm:mt-0"
               >
-                Set Current User (dev.reactbd@gmail.com)
+                Set Current User (admin@farmpedia.com)
               </Button>
             </div>
           </CardContent>

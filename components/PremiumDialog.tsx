@@ -28,7 +28,7 @@ const PremiumDialog = ({
   const url =
     purchaseUrl ||
     process.env.NEXT_PUBLIC_PURCHASE_CODE_URL ||
-    "https://reactbd.com";
+    "https://farmpedia.vercel.app";
 
   // Close on Escape
   useEffect(() => {

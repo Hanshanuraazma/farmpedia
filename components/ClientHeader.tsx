@@ -104,8 +104,7 @@ const ClientHeader = () => {
   };
 
   const purchaseUrl =
-    process.env.NEXT_PUBLIC_PURCHASE_CODE_URL ||
-    "https://buymeacoffee.com/reactbd/e/484104";
+    process.env.NEXT_PUBLIC_PURCHASE_CODE_URL || "https://farmpedia.vercel.app";
 
   return (
     <header

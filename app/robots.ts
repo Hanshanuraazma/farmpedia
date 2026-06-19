@@ -31,6 +31,6 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: "https://gofarm.reactbd.com/sitemap.xml",
+    sitemap: "https://farmpedia.vercel.app/sitemap.xml",
   };
 }

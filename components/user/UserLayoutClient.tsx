@@ -225,8 +225,8 @@ export function UserLayoutClient({ user, children }: UserLayoutClientProps) {
                     );
                   })}
 
-                  {/* Admin Section - Show for dev.reactbd@gmail.com */}
-                  {user?.email === "dev.reactbd@gmail.com" && (
+                  {/* Admin Section - Show for admin@farmpedia.com */}
+                  {user?.email === "admin@farmpedia.com" && (
                     <>
                       <div className="w-full border-t border-gray-200 my-3"></div>
                       <div className="w-full text-xs text-gray-500 mb-2 px-2">
@@ -360,7 +360,7 @@ export function UserLayoutClient({ user, children }: UserLayoutClientProps) {
                 })}
 
                 {/* Admin Section - Mobile */}
-                {user?.email === "dev.reactbd@gmail.com" && (
+                {user?.email === "admin@farmpedia.com" && (
                   <>
                     <div className="border-t border-gray-200 pt-4 mt-4">
                       <div className="text-xs text-gray-500 mb-3 px-4">

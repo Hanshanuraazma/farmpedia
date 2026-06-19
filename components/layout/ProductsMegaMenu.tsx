@@ -5,8 +5,8 @@ import Link from "next/link";
 import { ArrowRight, Crown, Lock, Menu, Sparkles, X } from "lucide-react";
 import Container from "@/components/Container";
 
-const PURCHASE_URL =
-  process.env.NEXT_PUBLIC_PURCHASE_CODE_URL || "https://reactbd.com";
+const purchaseUrl =
+  process.env.NEXT_PUBLIC_PURCHASE_CODE_URL || "https://farmpedia.vercel.app";
 
 const PREMIUM_BULLETS = [
   "Three-column product mega menu with live previews",
