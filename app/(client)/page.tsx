@@ -1,4 +1,3 @@
-import NewsletterSection from "@/components/NewsletterSection";
 import HomeBanner from "@/components/HomeBanner";
 import ProductGrid from "@/components/ProductGrid";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -107,7 +106,6 @@ export default async function Home() {
         <ShopFeatures />
         <ShopByBrands />
         <LatestBlog />
-        <NewsletterSection />
       </div>
 
       {/* Scroll to Top Button */}
