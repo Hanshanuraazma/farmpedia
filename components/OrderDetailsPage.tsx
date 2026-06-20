@@ -532,6 +532,14 @@ const OrderDetailsPage: React.FC<OrderDetailsPageProps> = ({ order }) => {
                             amount={item.product.price}
                             className="font-medium"
                           />
+                          {currentOrder.status === "delivered" && item.product.slug && (
+                            <Link
+                              href={`/product/${item.product.slug.current}`}
+                              className="text-xs text-blue-600 hover:text-blue-800 underline underline-offset-2 ml-2"
+                            >
+                              Write a Review
+                            </Link>
+                          )}
                         </div>
                       </div>
                       <div className="text-right">
