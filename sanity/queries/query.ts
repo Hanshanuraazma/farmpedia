@@ -6,10 +6,16 @@ const BANNER_QUERY = defineQuery(
 const FEATURED_CATEGORY_QUERY = defineQuery(
   `*[_type == 'category' && featured == true] | order(name desc)`,
 );
-const ALL_PRODUCTS_QUERY = defineQuery(`*[_type=="product"] | order(name asc)`);
+const ALL_PRODUCTS_QUERY = defineQuery(`*[_type=="product"] | order(name asc){
+  ...,
+  "averageRating": math::avg(*[_type == "review" && product._ref == ^._id && status == "approved"].rating),
+  "totalReviews": count(*[_type == "review" && product._ref == ^._id && status == "approved"])
+}`);
 const FEATURE_PRODUCTS = defineQuery(
   `*[_type == 'product' && isFeatured == true] | order(name asc){
-  ...,"categories": categories[]->title
+  ...,"categories": categories[]->title,
+  "averageRating": math::avg(*[_type == "review" && product._ref == ^._id && status == "approved"].rating),
+  "totalReviews": count(*[_type == "review" && product._ref == ^._id && status == "approved"])
 }`,
 );
 const BRANDS_QUERY = defineQuery(`*[_type=='brand'] | order(name asc) `);
@@ -169,6 +175,8 @@ const RELATED_PRODUCTS_QUERY = defineQuery(
     discount,
     stock,
     images,
+    "averageRating": math::avg(*[_type == "review" && product._ref == ^._id && status == "approved"].rating),
+    "totalReviews": count(*[_type == "review" && product._ref == ^._id && status == "approved"]),
     categories[]->{
       _id,
       title,
