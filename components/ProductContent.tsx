@@ -179,7 +179,7 @@ const ProductContent = ({
                         size={16}
                         className={`${
                           index < Math.floor(averageRating)
-                            ? "text-gofarm-light-green fill-gofarm-light-green"
+                            ? "text-yellow-400 fill-yellow-400"
                             : "text-gray-300"
                         }`}
                       />

@@ -199,7 +199,7 @@ const AdminReviews: React.FC = React.memo(() => {
                       size={16}
                       className={`${
                         index < review.rating
-                          ? "text-gofarm-light-green fill-gofarm-light-green"
+                          ? "text-yellow-400 fill-yellow-400"
                           : "text-gray-300"
                       }`}
                     />
@@ -319,7 +319,7 @@ const AdminReviews: React.FC = React.memo(() => {
                                     size={14}
                                     className={`${
                                       index < review.rating
-                                        ? "text-gofarm-light-green fill-gofarm-light-green"
+                                        ? "text-yellow-400 fill-yellow-400"
                                         : "text-gray-300"
                                     }`}
                                   />

@@ -179,7 +179,7 @@ const ReviewSidebar = React.memo(
                           size={40}
                           className={`${
                             value <= (hoverRating || rating)
-                              ? "text-gofarm-light-green fill-gofarm-light-green"
+                              ? "text-yellow-400 fill-yellow-400"
                               : "text-gray-300"
                           } transition-colors`}
                         />

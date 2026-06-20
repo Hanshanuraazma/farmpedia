@@ -107,7 +107,7 @@ const RelatedProducts = memo(({ relatedProducts }: RelatedProductsProps) => {
                           size={12}
                           className={`${
                             index < 4
-                              ? "text-gofarm-light-green fill-gofarm-light-green"
+                              ? "text-yellow-400 fill-yellow-400"
                               : "text-gray-300"
                           }`}
                         />
