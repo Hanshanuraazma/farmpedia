@@ -238,8 +238,8 @@ const PaymentSuccessPage = () => {
                       >
                         {paymentMethod === "stripe"
                           ? "Stripe"
-                          : paymentMethod === "sslcommerz"
-                          ? "SSLCommerz"
+                          : paymentMethod === "midtrans"
+                          ? "Midtrans"
                           : paymentMethod}
                       </Badge>
                     </div>
