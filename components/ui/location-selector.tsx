@@ -265,7 +265,7 @@ export default function LocationSelector({
           <SelectTrigger className="mt-1">
             <SelectValue placeholder="Select a country" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="max-h-64">
             {countries.map((country) => (
               <SelectItem key={country.isoCode} value={country.isoCode}>
                 <div className="flex items-center space-x-2">
@@ -304,7 +304,7 @@ export default function LocationSelector({
                 }
               />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="max-h-64">
               {states.map((state) => (
                 <SelectItem key={state.isoCode} value={state.isoCode}>
                   {state.name}
@@ -337,7 +337,7 @@ export default function LocationSelector({
                 }
               />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="max-h-64">
               {cities.map((city) => (
                 <SelectItem key={city.name} value={city.name}>
                   {city.name}
