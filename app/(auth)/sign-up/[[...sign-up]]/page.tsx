@@ -72,18 +72,6 @@ const SignUpPage = () => {
     [name, email, password, confirmPassword, agreeToTerms]
   );
 
-  const handleGoogleSignIn = async () => {
-    setError("");
-    setLoading(true);
-    try {
-      await signInWithGoogle();
-      router.push(redirectTo || "/user/dashboard");
-    } catch (err: any) {
-      setError(err.message || "Failed to sign in with Google");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gofarm-white">
