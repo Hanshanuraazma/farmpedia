@@ -76,7 +76,7 @@ export function OrderCheckoutContent({ order }: OrderCheckoutContentProps) {
   const [isProcessing, setIsProcessing] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [processingMethod, setProcessingMethod] = useState<
-    "stripe" | "sslcommerz" | null
+    "stripe" | "midtrans" | null
   >(null);
 
   const handlePayNowClick = () => {
@@ -121,12 +121,12 @@ export function OrderCheckoutContent({ order }: OrderCheckoutContentProps) {
     }
   };
 
-  const handleSSLCommerzPayment = async () => {
+  const handleMidtransPayment = async () => {
     setIsProcessing(true);
-    setProcessingMethod("sslcommerz");
+    setProcessingMethod("midtrans");
 
     try {
-      const response = await fetch(`/api/orders/${order._id}/pay/sslcommerz`, {
+      const response = await fetch(`/api/orders/${order._id}/pay/midtrans`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -136,21 +136,21 @@ export function OrderCheckoutContent({ order }: OrderCheckoutContentProps) {
       const data = await response.json();
 
       if (response.ok && data.success && data.gatewayUrl) {
-        // Redirect to SSLCommerz payment gateway
+        // Redirect to Midtrans payment gateway
         window.location.href = data.gatewayUrl;
       } else {
         showToast.error(
           "Payment Failed",
-          data.error || "Failed to create SSLCommerz payment session"
+          data.error || "Failed to create Midtrans payment session"
         );
         setIsProcessing(false);
         setProcessingMethod(null);
       }
     } catch (error) {
-      console.error("SSLCommerz payment error:", error);
+      console.error("Midtrans payment error:", error);
       showToast.error(
         "Payment Failed",
-        "Failed to initiate SSLCommerz payment"
+        "Failed to initiate Midtrans payment"
       );
       setIsProcessing(false);
       setProcessingMethod(null);
@@ -202,7 +202,7 @@ export function OrderCheckoutContent({ order }: OrderCheckoutContentProps) {
           setProcessingMethod(null);
         }}
         onConfirmStripe={handleStripePayment}
-        onConfirmSSLCommerz={handleSSLCommerzPayment}
+        onConfirmMidtrans={handleMidtransPayment}
         totalAmount={payableAmount}
         currency={order.currency}
         isProcessing={isProcessing}

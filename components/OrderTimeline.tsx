@@ -70,7 +70,7 @@ const OrderTimeline: React.FC<OrderTimelineProps> = ({ order }) => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [processingMethod, setProcessingMethod] = useState<
-    "stripe" | "sslcommerz" | null
+    "stripe" | "midtrans" | null
   >(null);
 
   // Calculate payable amount following OrderSummary pattern
@@ -118,12 +118,12 @@ const OrderTimeline: React.FC<OrderTimelineProps> = ({ order }) => {
     }
   };
 
-  const handleSSLCommerzPayment = async () => {
+  const handleMidtransPayment = async () => {
     setIsProcessing(true);
-    setProcessingMethod("sslcommerz");
+    setProcessingMethod("midtrans");
 
     try {
-      const response = await fetch(`/api/orders/${order._id}/pay/sslcommerz`, {
+      const response = await fetch(`/api/orders/${order._id}/pay/midtrans`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -133,18 +133,18 @@ const OrderTimeline: React.FC<OrderTimelineProps> = ({ order }) => {
       const data = await response.json();
 
       if (response.ok && data.success && data.gatewayUrl) {
-        // Redirect to SSLCommerz payment gateway
+        // Redirect to Midtrans payment gateway
         window.location.href = data.gatewayUrl;
       } else {
         toast.error(
-          data.error || "Failed to create SSLCommerz payment session"
+          data.error || "Failed to create Midtrans payment session"
         );
         setIsProcessing(false);
         setProcessingMethod(null);
       }
     } catch (error) {
-      console.error("SSLCommerz payment error:", error);
-      toast.error("Failed to initiate SSLCommerz payment");
+      console.error("Midtrans payment error:", error);
+      toast.error("Failed to initiate Midtrans payment");
       setIsProcessing(false);
       setProcessingMethod(null);
     }
@@ -200,8 +200,8 @@ const OrderTimeline: React.FC<OrderTimelineProps> = ({ order }) => {
         description:
           order.paymentMethod === "stripe"
             ? "Payment completed via Stripe"
-            : order.paymentMethod === "sslcommerz"
-            ? "Payment completed via SSLCommerz"
+            : order.paymentMethod === "midtrans"
+            ? "Payment completed via Midtrans"
             : order.paymentMethod === "cod"
             ? "Cash payment received"
             : "Payment completed online",
@@ -577,7 +577,7 @@ const OrderTimeline: React.FC<OrderTimelineProps> = ({ order }) => {
           setProcessingMethod(null);
         }}
         onConfirmStripe={handleStripePayment}
-        onConfirmSSLCommerz={handleSSLCommerzPayment}
+        onConfirmMidtrans={handleMidtransPayment}
         totalAmount={calculatePayableAmount()}
         currency={order.currency || "USD"}
         isProcessing={isProcessing}

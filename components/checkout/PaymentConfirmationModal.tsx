@@ -18,18 +18,18 @@ interface PaymentConfirmationModalProps {
   isOpen: boolean;
   onClose: () => void;
   onConfirmStripe: () => void;
-  onConfirmSSLCommerz: () => void;
+  onConfirmMidtrans: () => void;
   totalAmount: number;
   currency?: string;
   isProcessing: boolean;
-  processingMethod?: "stripe" | "sslcommerz" | null;
+  processingMethod?: "stripe" | "midtrans" | null;
 }
 
 export function PaymentConfirmationModal({
   isOpen,
   onClose,
   onConfirmStripe,
-  onConfirmSSLCommerz,
+  onConfirmMidtrans,
   totalAmount,
   currency = "USD",
   isProcessing,
@@ -102,9 +102,9 @@ export function PaymentConfirmationModal({
                 </div>
               </button>
 
-              {/* SSLCommerz Option */}
+              {/* Midtrans Option */}
               <button
-                onClick={onConfirmSSLCommerz}
+                onClick={onConfirmMidtrans}
                 disabled={isProcessing}
                 className="w-full p-4 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
               >
@@ -115,20 +115,20 @@ export function PaymentConfirmationModal({
                     </div>
                     <div className="text-left">
                       <h3 className="font-semibold text-gray-900">
-                        SSLCommerz Payment
+                        Midtrans Payment
                       </h3>
                       <p className="text-sm text-gray-600">
-                        bKash, Nagad, Rocket, Cards (Bangladesh)
+                        QRIS, GoPay, OVO, Virtual Accounts (Indonesia)
                       </p>
                     </div>
                   </div>
-                  {isProcessing && processingMethod === "sslcommerz" && (
+                  {isProcessing && processingMethod === "midtrans" && (
                     <Loader2 className="w-5 h-5 animate-spin text-green-600" />
                   )}
                 </div>
                 <div className="flex items-center gap-2 mt-2 text-xs text-gray-500">
                   <ShieldCheck className="w-3 h-3" />
-                  <span>Secured by SSLCommerz • Local payment methods</span>
+                  <span>Secured by Midtrans • Local payment methods</span>
                 </div>
               </button>
             </div>

@@ -28,7 +28,7 @@ const ResponsiveOrdersComponent = ({
   >(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [processingMethod, setProcessingMethod] = useState<
-    "stripe" | "sslcommerz" | null
+    "stripe" | "midtrans" | null
   >(null);
 
   // Calculate payable amount for an order
@@ -140,15 +140,15 @@ const ResponsiveOrdersComponent = ({
     }
   };
 
-  const handleSSLCommerzPayment = async () => {
+  const handleMidtransPayment = async () => {
     if (!selectedOrder?._id) return;
 
     setIsProcessing(true);
-    setProcessingMethod("sslcommerz");
+    setProcessingMethod("midtrans");
 
     try {
       const response = await fetch(
-        `/api/orders/${selectedOrder._id}/pay/sslcommerz`,
+        `/api/orders/${selectedOrder._id}/pay/midtrans`,
         {
           method: "POST",
           headers: {
@@ -163,14 +163,14 @@ const ResponsiveOrdersComponent = ({
         window.location.href = data.gatewayUrl;
       } else {
         toast.error(
-          data.error || "Failed to create SSLCommerz payment session"
+          data.error || "Failed to create Midtrans payment session"
         );
         setIsProcessing(false);
         setProcessingMethod(null);
       }
     } catch (error) {
-      console.error("SSLCommerz payment error:", error);
-      toast.error("Failed to initiate SSLCommerz payment");
+      console.error("Midtrans payment error:", error);
+      toast.error("Failed to initiate Midtrans payment");
       setIsProcessing(false);
       setProcessingMethod(null);
     }
@@ -378,7 +378,7 @@ const ResponsiveOrdersComponent = ({
         isOpen={paymentModalOpen}
         onClose={handlePaymentModalClose}
         onConfirmStripe={handleStripePayment}
-        onConfirmSSLCommerz={handleSSLCommerzPayment}
+        onConfirmMidtrans={handleMidtransPayment}
         totalAmount={selectedOrder ? calculatePayableAmount(selectedOrder) : 0}
         currency={selectedOrder?.currency || "USD"}
         isProcessing={isProcessing}
