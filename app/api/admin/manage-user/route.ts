@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
           newsletter: true,
           emailNotifications: true,
           smsNotifications: false,
-          preferredCurrency: "USD",
+          preferredCurrency: "SGD",
           preferredLanguage: "en",
         },
       });
@@ -76,3 +76,4 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+

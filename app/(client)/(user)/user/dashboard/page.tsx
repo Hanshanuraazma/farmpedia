@@ -284,7 +284,7 @@ export default function UserDashboardPage() {
                         Applied on:{" "}
                         {new Date(
                           userProfile.vendorAppliedAt,
-                        ).toLocaleDateString("en-US", {
+                        ).toLocaleDateString("en-SG", {
                           year: "numeric",
                           month: "long",
                           day: "numeric",
@@ -336,7 +336,7 @@ export default function UserDashboardPage() {
                         Reviewed on:{" "}
                         {new Date(
                           userProfile.vendorRejectedAt,
-                        ).toLocaleDateString("en-US", {
+                        ).toLocaleDateString("en-SG", {
                           year: "numeric",
                           month: "long",
                           day: "numeric",
@@ -489,7 +489,7 @@ export default function UserDashboardPage() {
                   <p className="text-amber-600 text-xs mt-3">
                     Applied on:{" "}
                     {new Date(userProfile.premiumAppliedAt).toLocaleDateString(
-                      "en-US",
+                      "en-SG",
                       {
                         weekday: "long",
                         year: "numeric",
@@ -576,7 +576,7 @@ export default function UserDashboardPage() {
                         Approved by {userProfile.premiumApprovedBy} on{" "}
                         {new Date(
                           userProfile.premiumApprovedAt,
-                        ).toLocaleDateString("en-US", {
+                        ).toLocaleDateString("en-SG", {
                           weekday: "long",
                           year: "numeric",
                           month: "long",
@@ -788,3 +788,4 @@ export default function UserDashboardPage() {
     </div>
   );
 }
+

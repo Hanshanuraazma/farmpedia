@@ -86,9 +86,9 @@ const AdminProducts: React.FC<AdminProductsProps> = ({
 
   // Utility functions
   const formatCurrency = (amount: number): string => {
-    return new Intl.NumberFormat("en-US", {
+    return new Intl.NumberFormat("en-SG", {
       style: "currency",
-      currency: "USD",
+      currency: "SGD",
     }).format(amount);
   };
 
@@ -197,7 +197,7 @@ const AdminProducts: React.FC<AdminProductsProps> = ({
 
   // Format date
   const formatDate = (dateString: string): string => {
-    return new Date(dateString).toLocaleDateString("en-US", {
+    return new Date(dateString).toLocaleDateString("en-SG", {
       year: "numeric",
       month: "short",
       day: "numeric",
@@ -838,3 +838,5 @@ const AdminProducts: React.FC<AdminProductsProps> = ({
 };
 
 export default AdminProducts;
+
+

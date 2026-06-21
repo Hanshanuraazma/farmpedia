@@ -137,9 +137,9 @@ export default function BulkAssignDeliverymanSheet({
 
   const totalAmount = orders.reduce((sum, order) => sum + order.totalPrice, 0);
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat("en-US", {
+    return new Intl.NumberFormat("en-SG", {
       style: "currency",
-      currency: "USD",
+      currency: "SGD",
     }).format(amount);
   };
 
@@ -328,3 +328,5 @@ export default function BulkAssignDeliverymanSheet({
     </Sheet>
   );
 }
+
+

@@ -143,7 +143,7 @@ const AdminUsers: React.FC = () => {
 
   // Utility functions
   const formatDate = (timestamp: number): string => {
-    return new Date(timestamp).toLocaleDateString("en-US", {
+    return new Date(timestamp).toLocaleDateString("en-SG", {
       year: "numeric",
       month: "short",
       day: "numeric",
@@ -1061,3 +1061,4 @@ const AdminUsers: React.FC = () => {
 };
 
 export default AdminUsers;
+

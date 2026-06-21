@@ -48,7 +48,7 @@ interface UserDetailsSidebarProps {
 
 const formatDate = (ts?: number | null) => {
   if (!ts) return "Never";
-  return new Date(ts).toLocaleDateString("en-US", {
+  return new Date(ts).toLocaleDateString("en-SG", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -410,3 +410,4 @@ export const UserDetailsSidebar: React.FC<UserDetailsSidebarProps> = ({
     </Sheet>
   );
 };
+

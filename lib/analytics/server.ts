@@ -98,7 +98,7 @@ export async function ga4Purchase(args: {
         params: {
           transaction_id: args.transactionId,
           value: args.value,
-          currency: args.currency ?? "USD",
+          currency: args.currency ?? "SGD",
           tax: args.tax,
           shipping: args.shipping,
           coupon: args.coupon,
@@ -125,10 +125,11 @@ export async function ga4Refund(args: {
         params: {
           transaction_id: args.transactionId,
           value: args.value,
-          currency: args.currency ?? "USD",
+          currency: args.currency ?? "SGD",
           items: args.items,
         },
       },
     ],
   });
 }
+

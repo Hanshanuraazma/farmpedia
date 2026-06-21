@@ -173,7 +173,7 @@ function toGA4Item(p: {
 export function trackAddToCart(params: AddToCartParams) {
   const item = toGA4Item(params);
   trackEvent("add_to_cart", {
-    currency: params.currency ?? "USD",
+    currency: params.currency ?? "SGD",
     value: (params.price ?? 0) * (params.quantity ?? 1),
     items: [item],
     user_id: params.userId,
@@ -183,7 +183,7 @@ export function trackAddToCart(params: AddToCartParams) {
 export function trackRemoveFromCart(params: RemoveFromCartParams) {
   const item = toGA4Item(params);
   trackEvent("remove_from_cart", {
-    currency: params.currency ?? "USD",
+    currency: params.currency ?? "SGD",
     value: (params.price ?? 0) * (params.quantity ?? 1),
     items: [item],
     user_id: params.userId,
@@ -223,7 +223,7 @@ export function trackProductView(params: ProductViewParams) {
   // GA4 reserved name is `view_item`.
   const item = toGA4Item(params);
   trackEvent("view_item", {
-    currency: params.currency ?? "USD",
+    currency: params.currency ?? "SGD",
     value: params.price ?? 0,
     items: [item],
     user_id: params.userId,
@@ -244,7 +244,7 @@ export function trackCheckoutStarted(params: {
   coupon?: string;
 }) {
   trackEvent("begin_checkout", {
-    currency: params.currency ?? "USD",
+    currency: params.currency ?? "SGD",
     value: params.cartValue,
     items: params.items ?? [],
     coupon: params.coupon,
@@ -313,7 +313,7 @@ export function trackPurchase(params: {
   trackEvent("purchase", {
     transaction_id: params.orderId,
     value: params.value,
-    currency: params.currency ?? "USD",
+    currency: params.currency ?? "SGD",
     tax: params.tax,
     shipping: params.shipping,
     coupon: params.coupon,
@@ -473,3 +473,4 @@ export function trackUserLoginEnhanced(
 }
 
 // Add more as needed for your analytics needs
+

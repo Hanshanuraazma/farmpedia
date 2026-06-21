@@ -32,7 +32,7 @@ export const storeSettingsType = defineType({
       title: "Currency code",
       type: "string",
       description: "ISO 4217 currency code (e.g. USD, BDT, EUR).",
-      initialValue: "USD",
+      initialValue: "SGD",
       validation: (Rule) => Rule.required().min(3).max(3).uppercase(),
     }),
     defineField({
@@ -134,3 +134,4 @@ export const storeSettingsType = defineType({
     },
   },
 });
+

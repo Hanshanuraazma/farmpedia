@@ -80,7 +80,7 @@ export async function POST(
     let exchangeRate = 1;
     if (order.currency === "USD") exchangeRate = 17000;
     else if (order.currency === "SGD") exchangeRate = 13000;
-    else if (!order.currency) exchangeRate = 17000; // default assumption
+    else if (!order.currency) exchangeRate = 13000; // default assumption to SGD now
 
     const finalAmountIDR = Math.round(payableAmount * exchangeRate);
 

@@ -515,7 +515,7 @@ export type User = {
     newsletter?: boolean;
     emailNotifications?: boolean;
     smsNotifications?: boolean;
-    preferredCurrency?: "USD" | "EUR" | "GBP" | "CAD";
+    preferredCurrency?: "SGD" | "EUR" | "GBP" | "CAD";
     preferredLanguage?: "en" | "es" | "fr" | "de";
   };
   rewardPoints?: number;
@@ -2401,3 +2401,4 @@ declare module "@sanity/client" {
     '*[_type == "productVariant" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    description,\n    image,\n    seoTitle,\n    seoDescription,\n    "productCount": count(*[_type == "product" && variant._ref == ^._id])\n  }': VARIANT_BY_SLUG_QUERY_RESULT;
   }
 }
+

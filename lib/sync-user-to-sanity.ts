@@ -146,7 +146,7 @@ export async function syncUserToSanity(
         newsletter: false,
         emailNotifications: true,
         smsNotifications: false,
-        preferredCurrency: "USD",
+        preferredCurrency: "SGD",
         preferredLanguage: "en",
       },
       createdAt: new Date().toISOString(),
@@ -255,3 +255,4 @@ export async function updateSanityUser(
     throw error;
   }
 }
+

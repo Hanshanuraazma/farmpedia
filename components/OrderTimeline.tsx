@@ -579,7 +579,7 @@ const OrderTimeline: React.FC<OrderTimelineProps> = ({ order }) => {
         onConfirmStripe={handleStripePayment}
         onConfirmMidtrans={handleMidtransPayment}
         totalAmount={calculatePayableAmount()}
-        currency={order.currency || "USD"}
+        currency={order.currency || "SGD"}
         isProcessing={isProcessing}
         processingMethod={processingMethod}
       />
@@ -588,3 +588,4 @@ const OrderTimeline: React.FC<OrderTimelineProps> = ({ order }) => {
 };
 
 export default OrderTimeline;
+

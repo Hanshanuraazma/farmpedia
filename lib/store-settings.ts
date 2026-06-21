@@ -5,7 +5,7 @@ import { client } from "@/sanity/lib/client";
  * been published yet. These should mirror the schema's `initialValue`s.
  */
 export const DEFAULT_STORE_SETTINGS: StoreSettings = {
-  currency: "USD",
+  currency: "SGD",
   currencySymbol: "$",
   freeShippingThreshold: 100,
   shippingFlatRate: 10,
@@ -117,3 +117,4 @@ export function computeTax(
 ): number {
   return subtotalAfterCoupon * settings.taxRate;
 }
+

@@ -380,7 +380,7 @@ const ResponsiveOrdersComponent = ({
         onConfirmStripe={handleStripePayment}
         onConfirmMidtrans={handleMidtransPayment}
         totalAmount={selectedOrder ? calculatePayableAmount(selectedOrder) : 0}
-        currency={selectedOrder?.currency || "USD"}
+        currency={selectedOrder?.currency || "SGD"}
         isProcessing={isProcessing}
         processingMethod={processingMethod}
       />
@@ -527,3 +527,4 @@ const ResponsiveOrdersComponent = ({
 };
 
 export default ResponsiveOrdersComponent;
+

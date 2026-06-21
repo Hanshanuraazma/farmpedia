@@ -7,8 +7,8 @@ interface Props {
 }
 
 const PriceFormatter = memo(({ amount, className }: Props) => {
-  const formattedPrice = new Number(amount).toLocaleString("en-US", {
-    currency: "USD",
+  const formattedPrice = new Number(amount).toLocaleString("en-SG", {
+    currency: "SGD",
     style: "currency",
     minimumFractionDigits: 2,
   });
@@ -24,3 +24,5 @@ const PriceFormatter = memo(({ amount, className }: Props) => {
 PriceFormatter.displayName = "PriceFormatter";
 
 export default PriceFormatter;
+
+

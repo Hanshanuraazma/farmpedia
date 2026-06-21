@@ -146,8 +146,8 @@ async function createAndFinalizeInvoice(
     }
 
     // Validate currency
-    const currency = (orderData.currency || "USD").toLowerCase();
-    if (!["usd", "eur", "gbp", "cad", "aud"].includes(currency)) {
+    const currency = (orderData.currency || "SGD").toLowerCase();
+    if (!["SGD", "eur", "gbp", "cad", "aud"].includes(currency)) {
       console.warn(`Unsupported currency: ${currency}, defaulting to USD`);
     }
 
@@ -330,7 +330,7 @@ async function updateOrderWithPaymentCompletion(
             firebaseUid,
             transactionId: order.orderNumber || orderId,
             value: order.totalPrice ?? 0,
-            currency: order.currency ?? "USD",
+            currency: order.currency ?? "SGD",
             tax: order.tax,
             shipping: order.shipping,
             coupon: order.coupon,
@@ -350,7 +350,7 @@ async function updateOrderWithPaymentCompletion(
                 item_category: p.product?.category,
                 price: p.product?.price,
                 quantity: p.quantity,
-                currency: p.product?.currency ?? order.currency ?? "USD",
+                currency: p.product?.currency ?? order.currency ?? "SGD",
               }),
             ),
           });
@@ -418,3 +418,4 @@ async function updateStockLevels(
     }
   }
 }
+

@@ -174,7 +174,7 @@ export function useOrderPlacement({ user }: UseOrderPlacementProps) {
         customerName: "Customer", // Will be filled from order data in API
         customerEmail: user?.email || "",
         orderId: orderNumber,
-        orderDate: new Date().toLocaleDateString("en-US", {
+        orderDate: new Date().toLocaleDateString("en-SG", {
           year: "numeric",
           month: "long",
           day: "numeric",
@@ -204,7 +204,7 @@ export function useOrderPlacement({ user }: UseOrderPlacementProps) {
         estimatedDelivery: (() => {
           const deliveryDate = new Date();
           deliveryDate.setDate(deliveryDate.getDate() + 5);
-          return deliveryDate.toLocaleDateString("en-US", {
+          return deliveryDate.toLocaleDateString("en-SG", {
             weekday: "long",
             year: "numeric",
             month: "long",
@@ -426,3 +426,4 @@ export function useOrderPlacement({ user }: UseOrderPlacementProps) {
     cartSnapshot: cart,
   };
 }
+

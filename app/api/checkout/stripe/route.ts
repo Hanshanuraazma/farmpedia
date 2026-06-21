@@ -31,7 +31,7 @@ export const POST = async (request: NextRequest) => {
       {
         quantity: 1,
         price_data: {
-          currency: "usd",
+          currency: "SGD",
           unit_amount: Math.round(orderAmount * 100), // Convert to cents
           product_data: {
             name: `Order #${orderNumber || orderId}`,
@@ -85,3 +85,4 @@ export const POST = async (request: NextRequest) => {
     );
   }
 };
+

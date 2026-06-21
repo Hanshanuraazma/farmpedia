@@ -203,8 +203,8 @@ export default function WarehouseOrdersList({
   const pendingCount = orders.filter((o) => !o.assignedDeliverymanId).length;
   const assignedCount = orders.filter((o) => !!o.assignedDeliverymanId).length;
 
-  const formatCurrency = (amount: number, currency: string = "USD") => {
-    return new Intl.NumberFormat("en-US", {
+  const formatCurrency = (amount: number, currency: string = "SGD") => {
+    return new Intl.NumberFormat("en-SG", {
       style: "currency",
       currency: currency,
     }).format(amount);
@@ -665,3 +665,5 @@ export default function WarehouseOrdersList({
     </div>
   );
 }
+
+

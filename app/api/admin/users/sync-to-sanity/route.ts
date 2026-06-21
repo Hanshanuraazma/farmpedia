@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
               emailNotifications: true,
               smsNotifications: false,
               newsletter: false,
-              preferredCurrency: "USD",
+              preferredCurrency: "SGD",
               preferredLanguage: "en",
             },
             loyaltyPoints: 0,
@@ -158,3 +158,4 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+

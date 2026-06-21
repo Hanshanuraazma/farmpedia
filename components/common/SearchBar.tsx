@@ -46,9 +46,9 @@ const saveRecent = (items: string[]) => {
 };
 
 const formatPrice = (n: number) =>
-  new Intl.NumberFormat("en-US", {
+  new Intl.NumberFormat("en-SG", {
     style: "currency",
-    currency: "USD",
+    currency: "SGD",
     maximumFractionDigits: 2,
   }).format(n);
 
@@ -459,3 +459,5 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
+

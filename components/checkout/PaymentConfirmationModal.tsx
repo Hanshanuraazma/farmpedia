@@ -31,7 +31,7 @@ export function PaymentConfirmationModal({
   onConfirmStripe,
   onConfirmMidtrans,
   totalAmount,
-  currency = "USD",
+  currency = "SGD",
   isProcessing,
   processingMethod,
 }: PaymentConfirmationModalProps) {
@@ -163,3 +163,4 @@ export function PaymentConfirmationModal({
     </Dialog>
   );
 }
+

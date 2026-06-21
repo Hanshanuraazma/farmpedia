@@ -138,7 +138,7 @@ export function generateProductSchema(product: any) {
     offers: {
       "@type": "Offer",
       url: `${BASE_URL}/product/${product.slug?.current}`,
-      priceCurrency: "USD",
+      priceCurrency: "SGD",
       price: product.price,
       priceValidUntil: new Date(
         new Date().setFullYear(new Date().getFullYear() + 1)
@@ -344,3 +344,4 @@ export function generateHomeMetadata(): Metadata {
     },
   };
 }
+

@@ -53,7 +53,7 @@ export const POST = async (request: NextRequest) => {
       userId: firebaseUid,
       email: user.email || email,
       amount: orderAmount,
-      currency: "usd",
+      currency: "SGD",
       status: "pending",
       items,
       shippingAddress,
@@ -75,3 +75,4 @@ export const POST = async (request: NextRequest) => {
     );
   }
 };
+

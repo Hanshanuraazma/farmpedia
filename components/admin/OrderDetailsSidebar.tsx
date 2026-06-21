@@ -89,15 +89,15 @@ const OrderDetailsSidebar: React.FC<OrderDetailsSidebarProps> = ({
   }, [order]);
 
   const formatCurrency = (amount: number): string => {
-    return new Intl.NumberFormat("en-US", {
+    return new Intl.NumberFormat("en-SG", {
       style: "currency",
-      currency: "USD",
+      currency: "SGD",
     }).format(amount);
   };
 
   const formatDate = (dateString: string): string => {
     if (!dateString) return "Not set";
-    return new Date(dateString).toLocaleDateString("en-US", {
+    return new Date(dateString).toLocaleDateString("en-SG", {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -518,7 +518,7 @@ const OrderDetailsSidebar: React.FC<OrderDetailsSidebarProps> = ({
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label className="text-sm font-medium">Currency</Label>
-                    <p className="text-sm">{order.currency || "USD"}</p>
+                    <p className="text-sm">{order.currency || "SGD"}</p>
                   </div>
                   <div>
                     <Label className="text-sm font-medium">Subtotal</Label>
@@ -1019,3 +1019,5 @@ const OrderDetailsSidebar: React.FC<OrderDetailsSidebarProps> = ({
 };
 
 export default OrderDetailsSidebar;
+
+

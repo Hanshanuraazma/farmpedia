@@ -247,7 +247,7 @@ export const productType = defineType({
       const image = media && media[0];
       return {
         title: title,
-        subtitle: `$${subtitle}`,
+        subtitle: `S$${subtitle}`,
         media: image,
       };
     },

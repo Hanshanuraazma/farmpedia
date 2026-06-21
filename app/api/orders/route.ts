@@ -115,7 +115,7 @@ export const POST = async (request: NextRequest) => {
         }),
       ),
       totalPrice: totalAmount,
-      currency: "USD",
+      currency: "SGD",
       productDiscount: productDiscount || 0,
       amountDiscount: coupon?.discountAmount || 0,
       businessDiscount: businessDiscount || 0,
@@ -229,3 +229,4 @@ export const POST = async (request: NextRequest) => {
     );
   }
 };
+
