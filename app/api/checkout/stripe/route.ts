@@ -55,7 +55,7 @@ export const POST = async (request: NextRequest) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}&order_id=${orderId}&orderNumber=${orderNumber}`,
+      success_url: `${origin}/payment-success?session_id={CHECKOUT_SESSION_ID}&order_id=${orderId}&orderNumber=${orderNumber}`,
       cancel_url: `${origin}/user/orders/${orderId}?cancelled=true`,
       metadata: {
         orderId: orderId.toString(),

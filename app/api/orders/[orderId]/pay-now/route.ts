@@ -192,7 +192,7 @@ export async function POST(
         payment_method_types: ["card"],
         line_items: lineItems,
         mode: "payment",
-        success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}&orderId=${order._id}`,
+        success_url: `${origin}/payment-success?session_id={CHECKOUT_SESSION_ID}&order_id=${order._id}&orderNumber=${order.orderNumber}`,
         cancel_url: `${origin}/orders`,
         metadata: {
           orderId: order._id,
