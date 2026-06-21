@@ -78,9 +78,9 @@ export async function POST(
 
     // Convert to IDR for Midtrans processing (mock exchange rate for demo)
     let exchangeRate = 1;
-    if (order.currency === "USD") exchangeRate = 16400;
-    else if (order.currency === "SGD") exchangeRate = 12200;
-    else if (!order.currency) exchangeRate = 16400; // default assumption
+    if (order.currency === "USD") exchangeRate = 17000;
+    else if (order.currency === "SGD") exchangeRate = 13000;
+    else if (!order.currency) exchangeRate = 17000; // default assumption
 
     const finalAmountIDR = Math.round(payableAmount * exchangeRate);
 
