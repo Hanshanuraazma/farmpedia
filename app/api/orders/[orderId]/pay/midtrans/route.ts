@@ -76,10 +76,18 @@ export async function POST(
     const transactionId = `FARM-${order.orderNumber || order._id.substring(0, 8)}-${Date.now()}`;
     const baseUrl = request.headers.get("origin") || process.env.NEXT_PUBLIC_BASE_URL || "https://farmpediagopedia.vercel.app";
 
+    // Convert to IDR for Midtrans processing (mock exchange rate for demo)
+    let exchangeRate = 1;
+    if (order.currency === "USD") exchangeRate = 16400;
+    else if (order.currency === "SGD") exchangeRate = 12200;
+    else if (!order.currency) exchangeRate = 16400; // default assumption
+
+    const finalAmountIDR = Math.round(payableAmount * exchangeRate);
+
     const parameter = {
       transaction_details: {
         order_id: transactionId,
-        gross_amount: Math.round(payableAmount),
+        gross_amount: finalAmountIDR,
       },
       customer_details: {
         first_name: order.customerName,
